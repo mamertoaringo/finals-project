@@ -1,5 +1,5 @@
 <x-guest-layout>
-    
+
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
     <form method="POST" action="{{ route('login') }}" class="row g-3 needs-validation">
@@ -41,6 +41,12 @@
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
+        </div>
+
+        <div class="col-12">
+            <p class="small mb-0">Don't have an account? <a href="{{ route('register') }}">
+                {{ __('Already registered?') }}
+            </a></p>
         </div>
     </form>
 </x-guest-layout>

@@ -1,6 +1,6 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
+        <a href="{{ route('dashboard')}}" class="logo d-flex align-items-center">
             <img src="assets/img/logo.png" alt="" />
             <span class="d-none d-lg-block">finals-project</span>
         </a>
@@ -39,9 +39,12 @@
                     <li>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-                            <x-responsive-nav-link :href="route('logout')"  class="dropdown-item d-flex align-items-center"
+                            <x-responsive-nav-link
+                                :href="route('logout')"
+                                class="dropdown-item d-flex align-items-center"
                                 onclick="event.preventDefault();
-                                        this.closest('form').submit();">                           
+                                        this.closest('form').submit();"
+                            >
                                 <i class="bi bi-box-arrow-right"></i>
                                 {{ __('Log Out') }}
                             </x-responsive-nav-link>
@@ -52,4 +55,3 @@
         </ul>
     </nav>
 </header>
-
